@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<div>
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Current price of stock</th>
+            <th>Total holding value</th>
+        </tr>
+        {% for e in shares %}
+        <tr>
+            <td>{{ e[0] }}</td>
+            <td>{{ e[1] }}</td>
+            <td>{{ e[2] }}</td>
+            <td>{{ e[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div>
+    Current cash balance: {{ current_cash }}
+</div>
+<div>
+    Total assets: {{ total_cash }}
+</div>
+{% endblock %}

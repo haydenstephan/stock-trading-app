@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>Transaction</th>
+        <th>Symbol</th>
+        <th>Total sale price</th>
+        <th>Number of shares</th>
+        <th>Date and time</th>
+    </tr>
+    {% for e in history %}
+    <tr>
+        <td>{{ e['type'] }}</td>
+        <td>{{ e['stock'] }}</td>
+        <td>{{ e['price'] }}</td>
+        <td>{{ e['shares'] }}</td>
+        <td>{{ e['time'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
